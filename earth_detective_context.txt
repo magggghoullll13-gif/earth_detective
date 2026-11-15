@@ -1,0 +1,1964 @@
+﻿
+========== ROOT ==========
+C:\Users\epc2\Desktop\event\earth detective
+
+========== GIT STATUS ==========
+ M web/app/layout.tsx
+ M web/package-lock.json
+ M web/package.json
+?? analysis/universal_grid.py
+?? analysis/validate_grid.py
+?? data/processed/grids/
+?? web/app/grid/
+?? web/components/
+?? web/public/data/
+?? web/public/maplibre-gl-worker.mjs
+
+
+========== GIT BRANCH ==========
+feature/data-analysis
+
+========== RECENT COMMITS ==========
+ebf09d2 Update project title in README
+8364380 chore: ignore raw NASA datasets
+41e4869 feat(data): analyze NASA IMERG rainfall for Pakistan
+3d8116f Merge pull request #1 from magggghoullll13-gif/omar-frontend
+e81ff7b feat: add EarthPulse Next.js frontend
+
+
+========== FILE TREE ==========
+.gitignore
+analysis\rainfall_analysis.py
+analysis\universal_grid.py
+analysis\validate_grid.py
+data\processed\grids\sindh_study_window_grid_5km.geojson
+data\processed\grids\sindh_study_window_grid_metadata.json
+data\processed\pakistan_rainfall_2022.json
+README.md
+web\.gitignore
+web\AGENTS.md
+web\app\favicon.ico
+web\app\globals.css
+web\app\grid\page.tsx
+web\app\layout.tsx
+web\app\page.tsx
+web\components\grid\GridExplorer.tsx
+web\eslint.config.mjs
+web\next.config.ts
+web\next-env.d.ts
+web\package.json
+web\public\data\grids\sindh_study_window_grid_5km.geojson
+web\public\file.svg
+web\public\globe.svg
+web\public\next.svg
+web\public\vercel.svg
+web\public\window.svg
+web\README.md
+web\tsconfig.json
+
+========== FILE: analysis\rainfall_analysis.py ==========
+
+from pathlib import Path
+import json
+import pandas as pd
+
+# ==========================================
+# 1. FILE PATHS
+# ==========================================
+
+ROOT = Path(__file__).resolve().parent.parent
+
+INPUT = ROOT / "data/raw/pakistan/imerg_august_2022.csv"
+OUTPUT = ROOT / "data/processed/pakistan_rainfall_2022.json"
+
+# ==========================================
+# 2. READ NASA DATA
+# ==========================================
+
+# NASA Giovanni CSV contains 8 metadata lines
+# before the actual column headers.
+
+df = pd.read_csv(INPUT, skiprows=8)
+
+# Remove spaces from column names
+df.columns = df.columns.str.strip()
+
+print("Columns:", df.columns.tolist())
+
+# Actual NASA columns
+date_col = "time"
+rain_col = "mean_GPM_3IMERGDF_07_precipitation"
+
+# ==========================================
+# 3. CLEAN DATA
+# ==========================================
+
+# Convert dates
+df["date"] = pd.to_datetime(
+    df[date_col],
+    format="%Y-%m-%d",
+    errors="raise"
+)
+
+# Convert rainfall values to numbers
+df["rainfall_mm"] = pd.to_numeric(
+    df[rain_col],
+    errors="coerce"
+)
+
+# NASA missing-data value is -9999.9
+df.loc[
+    df["rainfall_mm"] <= -9999,
+    "rainfall_mm"
+] = float("nan")
+
+# Remove invalid observations
+df = df.dropna(
+    subset=["date", "rainfall_mm"]
+)
+
+# Sort by date
+df = df.sort_values("date")
+
+# ==========================================
+# 4. VALIDATE DATA
+# ==========================================
+
+assert len(df) == 31, (
+    "Expected 31 valid daily observations"
+)
+
+assert df["date"].is_unique, (
+    "Duplicate dates found"
+)
+
+assert (df["rainfall_mm"] >= 0).all(), (
+    "Invalid negative rainfall values"
+)
+
+expected_dates = pd.date_range(
+    "2022-08-01",
+    "2022-08-31",
+    freq="D"
+)
+
+assert df["date"].reset_index(drop=True).equals(
+    pd.Series(expected_dates)
+), "Missing or unexpected observation dates"
+
+print("NASA data validation passed!")
+
+# ==========================================
+# 5. CALCULATE RAINFALL STATISTICS
+# ==========================================
+
+rain = df["rainfall_mm"]
+
+# Total monthly rainfall
+total_rainfall = round(
+    float(rain.sum()), 2
+)
+
+# Rainy days: rainfall >= 1 mm
+rainy_days = int(
+    (rain >= 1).sum()
+)
+
+# Heavy rainfall days: rainfall >= 10 mm
+heavy_rain_days = int(
+    (rain >= 10).sum()
+)
+
+# Maximum daily rainfall
+max_daily_rainfall = round(
+    float(rain.max()), 2
+)
+
+# Date of maximum rainfall
+max_rain_date = df.loc[
+    rain.idxmax(), "date"
+].strftime("%Y-%m-%d")
+
+# Average daily rainfall
+average_daily_rainfall = round(
+    float(rain.mean()), 2
+)
+
+# Consecutive rainy days
+max_consecutive_rainy_days = 0
+current_streak = 0
+
+for value in rain:
+    if value >= 1:
+        current_streak += 1
+
+        max_consecutive_rainy_days = max(
+            max_consecutive_rainy_days,
+            current_streak
+        )
+    else:
+        current_streak = 0
+
+# ==========================================
+# 6. PREPARE DAILY CHART DATA
+# ==========================================
+
+daily_rainfall = []
+
+for _, row in df.iterrows():
+    daily_rainfall.append({
+        "date": row["date"].strftime("%Y-%m-%d"),
+        "rainfallMm": round(
+            float(row["rainfall_mm"]), 3
+        )
+    })
+
+# ==========================================
+# 7. PREPARE JSON FOR NEXT.JS
+# ==========================================
+
+result = {
+    "regionId": "pakistan-sindh-study-area",
+    "regionName": "Pakistan â€” Sindh study area",
+
+    "period": {
+        "start": "2022-08-01",
+        "end": "2022-08-31"
+    },
+
+    "rainfall": {
+        "totalMm": total_rainfall,
+        "rainyDays": rainy_days,
+        "rainyDayThresholdMm": 1,
+        "heavyRainDays": heavy_rain_days,
+        "heavyRainThresholdMm": 10,
+        "maxDailyMm": max_daily_rainfall,
+        "maxDailyDate": max_rain_date,
+        "averageDailyMm": average_daily_rainfall,
+        "maxConsecutiveRainyDays": max_consecutive_rainy_days
+    },
+
+    "dailyRainfall": daily_rainfall,
+
+    "source": {
+        "provider": "NASA",
+        "mission": "GPM",
+        "dataset": "IMERG Final Run V07",
+        "product": "GPM_3IMERGDF",
+        "variable": "precipitation",
+        "aggregation": "Area-averaged daily precipitation",
+        "units": "mm/day",
+        "boundingBox": [
+            66,
+            23.5,
+            71.5,
+            28.5
+        ]
+    },
+
+    "limitations": [
+        "Results represent regional mean rainfall.",
+        "These are not individual grid-cell measurements.",
+        "Rainy days use a regional mean threshold of 1 mm/day.",
+        "Flood vulnerability is not calculated by this script."
+    ]
+}
+
+# ==========================================
+# 8. SAVE JSON FILE
+# ==========================================
+
+OUTPUT.parent.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+with open(
+    OUTPUT,
+    "w",
+    encoding="utf-8"
+) as file:
+    json.dump(
+        result,
+        file,
+        indent=2,
+        ensure_ascii=False
+    )
+
+# ==========================================
+# 9. PRINT RESULTS
+# ==========================================
+
+print("\n================================")
+print("EARTH DETECTIVE â€” NASA ANALYSIS")
+print("================================")
+
+print("Region: Sindh study area, Pakistan")
+print("Period: August 2022")
+
+print(f"Total rainfall: {total_rainfall} mm")
+print(f"Rainy days: {rainy_days}")
+print(f"Heavy rainfall days: {heavy_rain_days}")
+print(f"Maximum daily rainfall: {max_daily_rainfall} mm")
+print(f"Maximum rainfall date: {max_rain_date}")
+print(f"Average daily rainfall: {average_daily_rainfall} mm")
+print(
+    "Maximum consecutive rainy days:",
+    max_consecutive_rainy_days
+)
+
+print("\nNASA data processed successfully!")
+print(f"JSON saved to: {OUTPUT}")
+
+
+========== FILE: analysis\universal_grid.py ==========
+
+from pathlib import Path
+import argparse
+import json
+import math
+
+import geopandas as gpd
+from shapely.geometry import box
+from shapely.ops import unary_union
+
+
+# =========================================
+# EARTH DETECTIVE - UNIVERSAL GRID V1
+# =========================================
+
+GRID_SIZE_M = 5000
+
+# Global equal-area projection
+GRID_CRS = "EPSG:6933"
+
+# Geographic output projection
+OUTPUT_CRS = "EPSG:4326"
+
+GRID_ORIGIN_X = 0
+GRID_ORIGIN_Y = 0
+
+
+def make_cell_id(row, col):
+    """Generate a stable ID from grid coordinates."""
+    return f"r{row}_c{col}"
+
+
+def load_region(boundary_path=None, bbox=None):
+    """Load a polygon or create a rectangular study boundary."""
+
+    if boundary_path:
+        region = gpd.read_file(boundary_path)
+
+        if region.empty:
+            raise ValueError("Boundary file is empty.")
+
+        if region.crs is None:
+            raise ValueError(
+                "Boundary has no CRS. Define its CRS first."
+            )
+
+        geometry = unary_union(region.geometry)
+
+    elif bbox:
+        west, south, east, north = bbox
+
+        if west >= east or south >= north:
+            raise ValueError("Invalid bounding box.")
+
+        boundary = box(west, south, east, north)
+
+        region = gpd.GeoDataFrame(
+            {"name": ["Study area"]},
+            geometry=[boundary],
+            crs=OUTPUT_CRS
+        )
+
+        geometry = boundary
+
+    else:
+        raise ValueError(
+            "Provide a boundary GeoJSON or bounding box."
+        )
+
+    if geometry.is_empty:
+        raise ValueError("Region geometry is empty.")
+
+    if not geometry.is_valid:
+        geometry = geometry.buffer(0)
+
+    if geometry.is_empty or not geometry.is_valid:
+        raise ValueError("Could not repair region geometry.")
+
+    return gpd.GeoDataFrame(
+        {"region": ["study_area"]},
+        geometry=[geometry],
+        crs=region.crs if boundary_path else OUTPUT_CRS
+    )
+
+
+def generate_grid(region, cell_size=GRID_SIZE_M):
+    """Generate a fixed, globally aligned projected grid."""
+
+    if cell_size <= 0:
+        raise ValueError("Cell size must be positive.")
+
+    # Project region into meters
+    projected = region.to_crs(GRID_CRS)
+
+    region_geometry = unary_union(projected.geometry)
+
+    min_x, min_y, max_x, max_y = (
+        region_geometry.bounds
+    )
+
+    # Calculate grid row/column ranges
+    min_col = math.floor(
+        (min_x - GRID_ORIGIN_X) / cell_size
+    )
+
+    max_col = math.ceil(
+        (max_x - GRID_ORIGIN_X) / cell_size
+    )
+
+    min_row = math.floor(
+        (min_y - GRID_ORIGIN_Y) / cell_size
+    )
+
+    max_row = math.ceil(
+        (max_y - GRID_ORIGIN_Y) / cell_size
+    )
+
+    cells = []
+
+    for row in range(min_row, max_row):
+
+        for col in range(min_col, max_col):
+
+            x1 = GRID_ORIGIN_X + col * cell_size
+            y1 = GRID_ORIGIN_Y + row * cell_size
+
+            x2 = x1 + cell_size
+            y2 = y1 + cell_size
+
+            full_cell = box(x1, y1, x2, y2)
+
+            # Clip cell to selected region
+            clipped = full_cell.intersection(
+                region_geometry
+            )
+
+            if clipped.is_empty:
+                continue
+
+            if clipped.area <= 0:
+                continue
+
+            cells.append({
+                "cell_id": make_cell_id(row, col),
+                "row": row,
+                "col": col,
+                "full_area_km2": (
+                    full_cell.area / 1_000_000
+                ),
+                "clipped_area_km2": (
+                    clipped.area / 1_000_000
+                ),
+                "coverage_ratio": (
+                    clipped.area / full_cell.area
+                ),
+                "geometry": clipped
+            })
+
+    if not cells:
+        raise ValueError("No grid cells generated.")
+
+    return cells
+
+
+def add_neighbors(cells):
+    """Find cells sharing edges and cells touching corners."""
+
+    lookup = {
+        (cell["row"], cell["col"]): cell
+        for cell in cells
+    }
+
+    # Edge-sharing neighbors
+    edge_directions = [
+        (-1, 0),
+        (1, 0),
+        (0, -1),
+        (0, 1)
+    ]
+
+    # All eight directions
+    all_directions = [
+        (dr, dc)
+        for dr in (-1, 0, 1)
+        for dc in (-1, 0, 1)
+        if dr != 0 or dc != 0
+    ]
+
+    for cell in cells:
+
+        row = cell["row"]
+        col = cell["col"]
+
+        edge_neighbors = []
+        all_neighbors = []
+
+        for dr, dc in edge_directions:
+
+            neighbor = lookup.get(
+                (row + dr, col + dc)
+            )
+
+            if neighbor:
+                edge_neighbors.append(
+                    neighbor["cell_id"]
+                )
+
+        for dr, dc in all_directions:
+
+            neighbor = lookup.get(
+                (row + dr, col + dc)
+            )
+
+            if neighbor:
+                all_neighbors.append(
+                    neighbor["cell_id"]
+                )
+
+        cell["neighbors_4"] = edge_neighbors
+        cell["neighbors_8"] = all_neighbors
+
+    return cells
+
+
+def export_grid(
+    cells,
+    output_dir,
+    region_name,
+    cell_size
+):
+    """Export grid geometry and metadata."""
+
+    output_dir = Path(output_dir)
+    output_dir.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    records = []
+
+    for cell in cells:
+
+        centroid = cell["geometry"].centroid
+
+        records.append({
+            "cell_id": cell["cell_id"],
+            "row": cell["row"],
+            "col": cell["col"],
+            "cell_size_m": cell_size,
+            "full_area_km2": cell["full_area_km2"],
+            "clipped_area_km2": cell["clipped_area_km2"],
+            "coverage_ratio": cell["coverage_ratio"],
+            "centroid_x_m": centroid.x,
+            "centroid_y_m": centroid.y,
+            "neighbors_4": json.dumps(
+                cell["neighbors_4"]
+            ),
+            "neighbors_8": json.dumps(
+                cell["neighbors_8"]
+            ),
+            "geometry": cell["geometry"]
+        })
+
+    grid = gpd.GeoDataFrame(
+        records,
+        geometry="geometry",
+        crs=GRID_CRS
+    )
+
+    # Convert coordinates to latitude/longitude
+    grid = grid.to_crs(OUTPUT_CRS)
+
+    geojson_path = (
+        output_dir / f"{region_name}_grid_5km.geojson"
+    )
+
+    grid.to_file(
+        geojson_path,
+        driver="GeoJSON"
+    )
+
+    metadata = {
+        "project": "Earth Detective",
+        "region": region_name,
+        "grid_version": "1.0",
+        "grid_type": "fixed",
+        "cell_size_m": cell_size,
+        "grid_crs": GRID_CRS,
+        "output_crs": OUTPUT_CRS,
+        "grid_origin_m": [
+            GRID_ORIGIN_X,
+            GRID_ORIGIN_Y
+        ],
+        "cell_count": len(cells),
+        "neighbor_types": [
+            "4-directional edge neighbors",
+            "8-directional including corners"
+        ],
+        "data_values_included": False,
+        "note": (
+            "Grid geometry only. No rainfall, elevation, "
+            "or vulnerability values have been assigned."
+        )
+    }
+
+    metadata_path = (
+        output_dir / f"{region_name}_grid_metadata.json"
+    )
+
+    with open(
+        metadata_path,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            metadata,
+            file,
+            indent=2
+        )
+
+    print("\nGrid generation completed!")
+    print("Region:", region_name)
+    print("Cell size:", cell_size, "meters")
+    print("Number of cells:", len(cells))
+    print("GeoJSON:", geojson_path)
+    print("Metadata:", metadata_path)
+
+
+def main():
+
+    parser = argparse.ArgumentParser(
+        description="Earth Detective Universal Grid V1"
+    )
+
+    parser.add_argument(
+        "--boundary",
+        type=str,
+        help="Path to a polygon GeoJSON boundary"
+    )
+
+    parser.add_argument(
+        "--bbox",
+        type=float,
+        nargs=4,
+        metavar=("WEST", "SOUTH", "EAST", "NORTH"),
+        help="Rectangular study extent"
+    )
+
+    parser.add_argument(
+        "--region",
+        type=str,
+        default="study_area"
+    )
+
+    parser.add_argument(
+        "--cell-size",
+        type=int,
+        default=GRID_SIZE_M
+    )
+
+    parser.add_argument(
+        "--output",
+        type=str,
+        default="data/processed/grids"
+    )
+
+    args = parser.parse_args()
+
+    if bool(args.boundary) == bool(args.bbox):
+        parser.error(
+            "Provide exactly one of --boundary or --bbox."
+        )
+
+    region = load_region(
+        boundary_path=args.boundary,
+        bbox=args.bbox
+    )
+
+    cells = generate_grid(
+        region,
+        cell_size=args.cell_size
+    )
+
+    cells = add_neighbors(cells)
+
+    export_grid(
+        cells,
+        args.output,
+        args.region,
+        args.cell_size
+    )
+
+
+if __name__ == "__main__":
+    main()
+
+
+========== FILE: analysis\validate_grid.py ==========
+
+from pathlib import Path
+import geopandas as gpd
+
+path = Path(
+    "data/processed/grids/"
+    "sindh_study_window_grid_5km.geojson"
+)
+
+grid = gpd.read_file(path)
+
+print("GRID VALIDATION")
+print("---------------------------")
+
+print("Total cells:", len(grid))
+print("Unique IDs:", grid["cell_id"].nunique())
+print("CRS:", grid.crs)
+print("Invalid geometries:", (~grid.geometry.is_valid).sum())
+print("Empty geometries:", grid.geometry.is_empty.sum())
+
+print(
+    "Minimum coverage:",
+    round(grid["coverage_ratio"].min(), 4)
+)
+
+print(
+    "Maximum coverage:",
+    round(grid["coverage_ratio"].max(), 4)
+)
+
+print(
+    "Average clipped area:",
+    round(grid["clipped_area_km2"].mean(), 3),
+    "kmÂ²"
+)
+
+assert len(grid) == 12412
+assert grid["cell_id"].is_unique
+assert grid.crs.to_epsg() == 4326
+assert grid.geometry.is_valid.all()
+assert not grid.geometry.is_empty.any()
+
+print("\nAll basic grid checks passed!")
+
+
+========== FILE: data\processed\grids\sindh_study_window_grid_metadata.json ==========
+{
+  "project": "Earth Detective",
+  "region": "sindh_study_window",
+  "grid_version": "1.0",
+  "grid_type": "fixed",
+  "cell_size_m": 5000,
+  "grid_crs": "EPSG:6933",
+  "output_crs": "EPSG:4326",
+  "grid_origin_m": [
+    0,
+    0
+  ],
+  "cell_count": 12412,
+  "neighbor_types": [
+    "4-directional edge neighbors",
+    "8-directional including corners"
+  ],
+  "data_values_included": false,
+  "note": "Grid geometry only. No rainfall, elevation, or vulnerability values have been assigned."
+}
+
+========== FILE: data\processed\pakistan_rainfall_2022.json ==========
+{
+  "regionId": "pakistan-sindh-study-area",
+  "regionName": "Pakistan â€” Sindh study area",
+  "period": {
+    "start": "2022-08-01",
+    "end": "2022-08-31"
+  },
+  "rainfall": {
+    "totalMm": 394.36,
+    "rainyDays": 28,
+    "rainyDayThresholdMm": 1,
+    "heavyRainDays": 15,
+    "heavyRainThresholdMm": 10,
+    "maxDailyMm": 42.91,
+    "maxDailyDate": "2022-08-17",
+    "averageDailyMm": 12.72,
+    "maxConsecutiveRainyDays": 28
+  },
+  "dailyRainfall": [
+    {
+      "date": "2022-08-01",
+      "rainfallMm": 0.52
+    },
+    {
+      "date": "2022-08-02",
+      "rainfallMm": 0.932
+    },
+    {
+      "date": "2022-08-03",
+      "rainfallMm": 0.808
+    },
+    {
+      "date": "2022-08-04",
+      "rainfallMm": 5.243
+    },
+    {
+      "date": "2022-08-05",
+      "rainfallMm": 17.561
+    },
+    {
+      "date": "2022-08-06",
+      "rainfallMm": 8.013
+    },
+    {
+      "date": "2022-08-07",
+      "rainfallMm": 4.216
+    },
+    {
+      "date": "2022-08-08",
+      "rainfallMm": 15.852
+    },
+    {
+      "date": "2022-08-09",
+      "rainfallMm": 9.09
+    },
+    {
+      "date": "2022-08-10",
+      "rainfallMm": 10.739
+    },
+    {
+      "date": "2022-08-11",
+      "rainfallMm": 8.718
+    },
+    {
+      "date": "2022-08-12",
+      "rainfallMm": 12.101
+    },
+    {
+      "date": "2022-08-13",
+      "rainfallMm": 14.842
+    },
+    {
+      "date": "2022-08-14",
+      "rainfallMm": 6.729
+    },
+    {
+      "date": "2022-08-15",
+      "rainfallMm": 12.806
+    },
+    {
+      "date": "2022-08-16",
+      "rainfallMm": 25.544
+    },
+    {
+      "date": "2022-08-17",
+      "rainfallMm": 42.91
+    },
+    {
+      "date": "2022-08-18",
+      "rainfallMm": 42.249
+    },
+    {
+      "date": "2022-08-19",
+      "rainfallMm": 27.256
+    },
+    {
+      "date": "2022-08-20",
+      "rainfallMm": 11.383
+    },
+    {
+      "date": "2022-08-21",
+      "rainfallMm": 19.789
+    },
+    {
+      "date": "2022-08-22",
+      "rainfallMm": 8.034
+    },
+    {
+      "date": "2022-08-23",
+      "rainfallMm": 31.228
+    },
+    {
+      "date": "2022-08-24",
+      "rainfallMm": 31.772
+    },
+    {
+      "date": "2022-08-25",
+      "rainfallMm": 10.714
+    },
+    {
+      "date": "2022-08-26",
+      "rainfallMm": 4.145
+    },
+    {
+      "date": "2022-08-27",
+      "rainfallMm": 2.169
+    },
+    {
+      "date": "2022-08-28",
+      "rainfallMm": 1.45
+    },
+    {
+      "date": "2022-08-29",
+      "rainfallMm": 1.681
+    },
+    {
+      "date": "2022-08-30",
+      "rainfallMm": 1.588
+    },
+    {
+      "date": "2022-08-31",
+      "rainfallMm": 4.278
+    }
+  ],
+  "source": {
+    "provider": "NASA",
+    "mission": "GPM",
+    "dataset": "IMERG Final Run V07",
+    "product": "GPM_3IMERGDF",
+    "variable": "precipitation",
+    "aggregation": "Area-averaged daily precipitation",
+    "units": "mm/day",
+    "boundingBox": [
+      66,
+      23.5,
+      71.5,
+      28.5
+    ]
+  },
+  "limitations": [
+    "Results represent regional mean rainfall.",
+    "These are not individual grid-cell measurements.",
+    "Rainy days use a regional mean threshold of 1 mm/day.",
+    "Flood vulnerability is not calculated by this script."
+  ]
+}
+
+========== FILE: README.md ==========
+earth detective
+
+
+========== FILE: web\AGENTS.md ==========
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes â€” APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` â€” verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
+
+
+========== FILE: web\app\globals.css ==========
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+========== FILE: web\app\grid\page.tsx ==========
+import GridExplorer from "@/components/grid/GridExplorer";
+
+export default function GridPage() {
+  return <GridExplorer />;
+}
+
+========== FILE: web\app\layout.tsx ==========
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "maplibre-gl/dist/maplibre-gl.css";
+import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Create Next App",
+  description: "Generated by create next app",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col">{children}</body>
+    </html>
+  );
+}
+
+
+========== FILE: web\app\page.tsx ==========
+import Image from "next/image";
+
+export default function Home() {
+  return (
+    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+        <Image
+          className="dark:invert h-5 w-[100px]"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={100}
+          height={20}
+          priority
+        />
+        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+            To get started, edit the{" "}
+            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
+              page.tsx
+            </code>{" "}
+            file.
+          </h1>
+          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            Looking for a starting point or more instructions? Head over to{" "}
+            <a
+              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              className="font-medium text-zinc-950 dark:text-zinc-50"
+            >
+              Templates
+            </a>{" "}
+            or the{" "}
+            <a
+              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              className="font-medium text-zinc-950 dark:text-zinc-50"
+            >
+              Learning
+            </a>{" "}
+            center.
+          </p>
+        </div>
+        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+          <a
+            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="dark:invert h-[14px] w-4"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={16}
+              height={14}
+            />
+            Deploy Now
+          </a>
+          <a
+            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Documentation
+          </a>
+        </div>
+      </main>
+    </div>
+  );
+}
+
+
+========== FILE: web\components\grid\GridExplorer.tsx ==========
+
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+type Cell = {
+  cell_id: string;
+  row: number;
+  col: number;
+  cell_size_m: number;
+  full_area_km2: number;
+  clipped_area_km2: number;
+  coverage_ratio: number;
+  neighbors_4: string[] | string;
+  neighbors_8: string[] | string;
+};
+
+type GridData = {
+  type: "FeatureCollection";
+  features: {
+    type: "Feature";
+    properties: Cell;
+    geometry: any;
+  }[];
+};
+
+const DATA_URL =
+  "/data/grids/sindh_study_window_grid_5km.geojson";
+
+function parseNeighbors(value: string[] | string): string[] {
+  if (Array.isArray(value)) return value;
+
+  try {
+    return JSON.parse(value || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function getBounds(data: GridData) {
+  let west = Infinity;
+  let south = Infinity;
+  let east = -Infinity;
+  let north = -Infinity;
+
+  function visit(value: any) {
+    if (
+      Array.isArray(value) &&
+      typeof value[0] === "number" &&
+      typeof value[1] === "number"
+    ) {
+      west = Math.min(west, value[0]);
+      south = Math.min(south, value[1]);
+      east = Math.max(east, value[0]);
+      north = Math.max(north, value[1]);
+      return;
+    }
+
+    if (Array.isArray(value)) value.forEach(visit);
+  }
+
+  data.features.forEach((feature) =>
+    visit(feature.geometry.coordinates)
+  );
+
+  return [[west, south], [east, north]];
+}
+
+export default function GridExplorer() {
+  const mapContainer = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<any>(null);
+  const selectedRef = useRef<Cell | null>(null);
+  const gridRef = useRef<GridData | null>(null);
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [grid, setGrid] = useState<GridData | null>(null);
+  const [selected, setSelected] = useState<Cell | null>(null);
+
+  const [showGrid, setShowGrid] = useState(true);
+  const [showHeatmap, setShowHeatmap] = useState(false);
+  const [showNeighbors, setShowNeighbors] = useState(true);
+  const [neighborMode, setNeighborMode] = useState<4 | 8>(8);
+  const [gridOpacity, setGridOpacity] = useState(65);
+
+  const [mapReady, setMapReady] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    let map: any;
+
+    async function initializeMap() {
+      try {
+        const response = await fetch(DATA_URL);
+
+        if (!response.ok) {
+          throw new Error("Unable to load the grid GeoJSON.");
+        }
+
+        const data: GridData = await response.json();
+
+        if (!data.features?.length) {
+          throw new Error("The GeoJSON contains no cells.");
+        }
+
+        if (cancelled || !mapContainer.current) return;
+
+        setGrid(data);
+        gridRef.current = data;
+
+        const maplibregl = await import("maplibre-gl");
+        maplibregl.setWorkerUrl("/maplibre-gl-worker.mjs");
+
+        if (cancelled || !mapContainer.current) return;
+
+        const mapStyle = {
+          version: 8,
+          sources: {
+            satellite: {
+              type: "raster",
+              tiles: [
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+              ],
+              tileSize: 256,
+              attribution:
+                "Imagery Â© Esri, Maxar, Earthstar Geographics, and the GIS User Community"
+            }
+          },
+          layers: [
+            {
+              id: "satellite-layer",
+              type: "raster",
+              source: "satellite",
+              minzoom: 0,
+              maxzoom: 19
+            }
+          ]
+        } as any;
+
+        map = new maplibregl.Map({
+          container: mapContainer.current,
+          style: mapStyle,
+          center: [68.75, 26],
+          zoom: 6,
+          maxZoom: 18,
+          renderWorldCopies: false,
+        });
+
+        // MAPLIBRE DEBUG
+        map.on("error", (event: any) => {
+          console.error("MAPLIBRE ERROR:", event.error);
+        });
+
+        console.log("MAPLIBRE DEBUG: Map initialized");
+        console.log("GRID FEATURES:", data.features.length);
+        console.log("GRID BOUNDS:", getBounds(data));
+
+        mapRef.current = map;
+
+        map.addControl(
+          new maplibregl.NavigationControl(),
+          "top-right"
+        );
+
+        map.addControl(
+          new maplibregl.ScaleControl({
+            unit: "metric"
+          }),
+          "bottom-left"
+        );
+
+        map.on("load", () => {
+          if (cancelled) return;
+
+          map.addSource("grid-data", {
+            type: "geojson",
+            data
+          });
+
+          map.addLayer({
+            id: "grid-fill",
+            type: "fill",
+            source: "grid-data",
+            paint: {
+              "fill-color": "#25bde8",
+              "fill-opacity": gridOpacity / 100
+            }
+          });
+
+          map.addLayer({
+            id: "grid-outline",
+            type: "line",
+            source: "grid-data",
+            paint: {
+              "line-color": "#a5eaff",
+              "line-width": 0.55,
+              "line-opacity": 0.65
+            }
+          });
+
+          map.addLayer({
+            id: "grid-neighbors",
+            type: "fill",
+            source: "grid-data",
+            filter: ["==", ["get", "cell_id"], "__none__"],
+            paint: {
+              "fill-color": "#f5c451",
+              "fill-opacity": 0.75
+            }
+          });
+
+          map.addLayer({
+            id: "grid-selected",
+            type: "line",
+            source: "grid-data",
+            filter: ["==", ["get", "cell_id"], "__none__"],
+            paint: {
+              "line-color": "#ffffff",
+              "line-width": 3
+            }
+          });
+
+          const bounds = getBounds(data);
+
+          map.fitBounds(bounds, {
+            padding: 65,
+            duration: 0
+          });
+          map.once("idle", () => {
+            console.log("========== GRID DIAGNOSTICS ==========");
+            console.log("Features:", data.features.length);
+            console.log("Source exists:", !!map.getSource("grid-data"));
+            console.log("Fill layer:", !!map.getLayer("grid-fill"));
+            console.log("Outline layer:", !!map.getLayer("grid-outline"));
+            console.log(
+              "Rendered features:",
+              map.queryRenderedFeatures({
+                layers: ["grid-fill"]
+              }).length
+            );
+            console.log("Map bounds:", map.getBounds());
+            console.log("======================================");
+          });
+
+          map.on("click", "grid-fill", (event: any) => {
+            const feature = event.features?.[0];
+
+            if (!feature?.properties) return;
+
+            const cell = feature.properties as Cell;
+
+            selectedRef.current = cell;
+            setSelected(cell);
+          });
+
+          map.on("mouseenter", "grid-fill", () => {
+            map.getCanvas().style.cursor = "pointer";
+          });
+
+          map.on("mouseleave", "grid-fill", () => {
+            map.getCanvas().style.cursor = "";
+          });
+
+          setMapReady(true);
+        });
+      } catch (err) {
+        if (!cancelled) {
+          setError(
+            err instanceof Error
+              ? err.message
+              : "Map initialization failed."
+          );
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+
+    initializeMap();
+
+    return () => {
+      cancelled = true;
+      map?.remove();
+      mapRef.current = null;
+    };
+  }, []);
+
+  // Update selected cell and its neighbors
+  useEffect(() => {
+    const map = mapRef.current;
+
+    if (!map || !mapReady || !map.getLayer("grid-selected")) {
+      return;
+    }
+
+    if (!selected) {
+      map.setFilter("grid-neighbors", [
+        "==", ["get", "cell_id"], "__none__"
+      ]);
+
+      map.setFilter("grid-selected", [
+        "==", ["get", "cell_id"], "__none__"
+      ]);
+
+      return;
+    }
+
+    const neighbors = parseNeighbors(
+      neighborMode === 4
+        ? selected.neighbors_4
+        : selected.neighbors_8
+    );
+
+    map.setFilter("grid-neighbors", [
+      "in",
+      ["get", "cell_id"],
+      ["literal", neighbors]
+    ]);
+
+    map.setFilter("grid-selected", [
+      "==",
+      ["get", "cell_id"],
+      selected.cell_id
+    ]);
+  }, [selected, neighborMode, mapReady]);
+
+  // Grid visibility and opacity
+  useEffect(() => {
+    const map = mapRef.current;
+
+    if (!map || !mapReady) return;
+
+    const visibility = showGrid ? "visible" : "none";
+
+    ["grid-fill", "grid-outline", "grid-neighbors", "grid-selected"]
+      .forEach((layer) => {
+        if (map.getLayer(layer)) {
+          map.setLayoutProperty(
+            layer,
+            "visibility",
+            visibility
+          );
+        }
+      });
+
+    if (map.getLayer("grid-fill")) {
+      map.setPaintProperty(
+        "grid-fill",
+        "fill-opacity",
+        gridOpacity / 100
+      );
+    }
+  }, [showGrid, gridOpacity, mapReady]);
+
+  const features = grid?.features ?? [];
+
+  const boundaryCount = features.filter(
+    (f) => f.properties.coverage_ratio < 0.9999
+  ).length;
+
+  function resetMap() {
+    const map = mapRef.current;
+    if (!map || !grid) return;
+
+    map.fitBounds(getBounds(grid), {
+      padding: 65,
+      duration: 800
+    });
+
+    setSelected(null);
+    selectedRef.current = null;
+  }
+
+  const selectedNeighborCount = selected
+    ? parseNeighbors(
+        neighborMode === 4
+          ? selected.neighbors_4
+          : selected.neighbors_8
+      ).length
+    : 0;
+
+  return (
+    <main className="min-h-screen bg-[#07111e] p-4 text-white md:p-6">
+
+      <div className="mx-auto max-w-[1800px] space-y-5">
+
+        {/* HEADER */}
+        <header className="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-cyan-400">
+              Earth Detective / Spatial Intelligence
+            </p>
+
+            <h1 className="mt-2 text-3xl font-bold">
+              Universal Grid Explorer
+            </h1>
+
+            <p className="mt-1 text-sm text-slate-400">
+              Sindh study window Â· 5 km fixed geographic grid
+            </p>
+          </div>
+
+          <button
+            onClick={resetMap}
+            className="rounded-lg border border-white/15 px-4 py-2 text-sm hover:bg-white/10"
+          >
+            Fit study area
+          </button>
+        </header>
+
+        {/* STATISTICS */}
+        <section className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+          {[
+            ["Total cells", features.length.toLocaleString()],
+            ["Boundary cells", boundaryCount.toLocaleString()],
+            ["Resolution", "5 Ã— 5 km"],
+            ["Selected cell", selected?.cell_id ?? "None"]
+          ].map(([label, value]) => (
+            <div
+              key={label}
+              className="rounded-xl border border-white/10 bg-[#111e2d] p-4"
+            >
+              <p className="text-xs text-slate-400">{label}</p>
+              <p className="mt-2 truncate text-xl font-bold text-cyan-300">
+                {value}
+              </p>
+            </div>
+          ))}
+        </section>
+
+        {/* MAP + PANEL */}
+        <section className="grid gap-4 xl:grid-cols-[1fr_330px]">
+
+          {/* MAP */}
+          <div className="overflow-hidden rounded-xl border border-white/10 bg-[#101b29]">
+
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 p-4">
+              <div>
+                <h2 className="font-semibold">Satellite map</h2>
+                <p className="text-xs text-slate-400">
+                  Click a grid cell to inspect its neighborhood
+                </p>
+              </div>
+
+              <span className="rounded-md bg-cyan-400/10 px-3 py-1 text-xs text-cyan-300">
+                MAPLIBRE Â· SATELLITE
+              </span>
+            </div>
+
+            <div className="relative">
+              <div
+                ref={mapContainer}
+                className="h-[600px] w-full"
+              />
+
+              {loading && (
+                <div className="absolute inset-0 flex items-center justify-center bg-[#07111e]">
+                  Loading geographic data...
+                </div>
+              )}
+
+              {error && (
+                <div className="absolute inset-0 flex items-center justify-center bg-[#07111e] p-6 text-center text-red-300">
+                  {error}
+                </div>
+              )}
+
+              <div className="absolute bottom-4 right-4 rounded-lg border border-white/10 bg-[#07111e]/90 p-3 text-xs backdrop-blur">
+                <p className="mb-2 font-semibold">Map legend</p>
+                <p className="mb-1 text-cyan-300">â–  Grid cells</p>
+                <p className="mb-1 text-amber-300">â–  Neighbors</p>
+                <p className="text-white">â–  Selected cell</p>
+              </div>
+            </div>
+          </div>
+
+          {/* SIDE PANEL */}
+          <aside className="space-y-4">
+
+            {/* LAYERS */}
+            <div className="rounded-xl border border-white/10 bg-[#111e2d] p-4">
+              <h3 className="font-semibold">Map layers</h3>
+
+              <label className="mt-5 flex items-center justify-between text-sm">
+                <span>5 km geographic grid</span>
+                <input
+                  type="checkbox"
+                  checked={showGrid}
+                  onChange={(e) => setShowGrid(e.target.checked)}
+                  className="accent-cyan-400"
+                />
+              </label>
+
+              <div className="mt-4">
+                <label className="text-xs text-slate-400">
+                  Grid opacity: {gridOpacity}%
+                </label>
+
+                <input
+                  type="range"
+                  min="10"
+                  max="100"
+                  value={gridOpacity}
+                  onChange={(e) =>
+                    setGridOpacity(Number(e.target.value))
+                  }
+                  className="mt-2 w-full accent-cyan-400"
+                />
+              </div>
+
+              <div className="mt-5 border-t border-white/10 pt-4">
+                <label className="flex items-center justify-between text-sm text-slate-500">
+                  Environmental heatmap
+                  <input
+                    type="checkbox"
+                    checked={showHeatmap}
+                    disabled
+                    onChange={(e) => setShowHeatmap(e.target.checked)}
+                  />
+                </label>
+
+                <p className="mt-2 text-xs text-amber-300">
+                  Waiting for real gridded environmental data.
+                </p>
+              </div>
+            </div>
+
+            {/* NEIGHBORS */}
+            <div className="rounded-xl border border-white/10 bg-[#111e2d] p-4">
+              <h3 className="font-semibold">Neighborhood analysis</h3>
+
+              <label className="mt-4 flex items-center justify-between text-sm">
+                Highlight neighbors
+                <input
+                  type="checkbox"
+                  checked={showNeighbors}
+                  onChange={(e) => {
+                    const enabled = e.target.checked;
+                    setShowNeighbors(enabled);
+
+                    if (!enabled && mapRef.current) {
+                      mapRef.current.setFilter("grid-neighbors", [
+                        "==", ["get", "cell_id"], "__none__"
+                      ]);
+                    }
+                  }}
+                  className="accent-cyan-400"
+                />
+              </label>
+
+              <div className="mt-4 grid grid-cols-2 gap-2">
+                {([4, 8] as const).map((mode) => (
+                  <button
+                    key={mode}
+                    onClick={() => setNeighborMode(mode)}
+                    className={`rounded-lg p-2 text-sm ${
+                      neighborMode === mode
+                        ? "bg-cyan-500 text-slate-950"
+                        : "bg-white/5"
+                    }`}
+                  >
+                    {mode} neighbors
+                  </button>
+                ))}
+              </div>
+
+              <p className="mt-3 text-xs text-slate-400">
+                Selected neighboring cells: {showNeighbors ? selectedNeighborCount : 0}
+              </p>
+            </div>
+
+            {/* CELL DETAILS */}
+            <div className="rounded-xl border border-white/10 bg-[#111e2d] p-4">
+              <h3 className="font-semibold">Selected cell</h3>
+
+              {selected ? (
+                <div className="mt-4 space-y-3 text-sm">
+
+                  <div>
+                    <p className="text-xs text-slate-400">Cell ID</p>
+                    <p className="mt-1 break-all font-mono text-cyan-300">
+                      {selected.cell_id}
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <p className="text-xs text-slate-400">Row</p>
+                      <p className="font-semibold">{selected.row}</p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs text-slate-400">Column</p>
+                      <p className="font-semibold">{selected.col}</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="text-xs text-slate-400">Area</p>
+                    <p className="font-semibold">
+                      {selected.clipped_area_km2.toFixed(3)} kmÂ²
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-xs text-slate-400">Coverage</p>
+                    <p className="font-semibold">
+                      {(selected.coverage_ratio * 100).toFixed(1)}%
+                    </p>
+                  </div>
+
+                  <div className="rounded-lg bg-black/20 p-3">
+                    <p className="text-xs text-amber-300">
+                      No environmental data mapped yet.
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => setSelected(null)}
+                    className="w-full rounded-lg border border-white/10 p-2 hover:bg-white/5"
+                  >
+                    Clear selection
+                  </button>
+                </div>
+              ) : (
+                <p className="mt-3 text-sm leading-6 text-slate-400">
+                  Click any grid cell on the satellite map to inspect it.
+                </p>
+              )}
+            </div>
+
+            <div className="rounded-xl border border-cyan-500/20 bg-cyan-500/5 p-4">
+              <p className="text-xs font-semibold text-cyan-300">
+                DATA INTEGRITY
+              </p>
+              <p className="mt-2 text-xs leading-5 text-slate-300">
+                This view currently contains geographic grid geometry only.
+                No rainfall, elevation, or flood measurements have been
+                assigned to individual cells.
+              </p>
+            </div>
+          </aside>
+        </section>
+      </div>
+    </main>
+  );
+}
+
+
+========== FILE: web\next.config.ts ==========
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* config options here */
+  experimental: {
+    agentFeedback: true,
+  },
+  cacheComponents: true,
+  partialPrefetching: true,
+  turbopack: {
+    rules: {
+      "*.css": {
+        loaders: ["@tailwindcss/turbopack"],
+        as: "*.css",
+      },
+    },
+  },
+};
+
+export default nextConfig;
+
+
+========== FILE: web\next-env.d.ts ==========
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+import "./.next/dev/types/routes.d.ts";
+import "./.next/dev/types/root-params.d.ts";
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/app/api-reference/config/typescript for more information.
+
+
+========== FILE: web\package.json ==========
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "maplibre-gl": "^6.18.0",
+    "next": "16.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "4.3.3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "tailwindcss": "4.3.3",
+    "typescript": "^5"
+  }
+}
+
+
+========== FILE: web\README.md ==========
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+========== FILE: web\tsconfig.json ==========
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+  ],
+  "exclude": ["node_modules"]
+}
+
+
+========== GEOJSON SUMMARY: sindh_study_window_grid_5km.geojson ==========
+Path: C:\Users\epc2\Desktop\event\earth detective\data\processed\grids\sindh_study_window_grid_5km.geojson
+Feature count: 12412
+CRS: {"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}}
+Geometry: Polygon
+Properties: cell_id, row, col, cell_size_m, full_area_km2, clipped_area_km2, coverage_ratio, centroid_x_m, centroid_y_m, neighbors_4, neighbors_8
+First feature:
+{
+    "cell_id":  "r583_c1273",
+    "row":  583,
+    "col":  1273,
+    "cell_size_m":  5000,
+    "full_area_km2":  25.0,
+    "clipped_area_km2":  6.3051987076053928,
+    "coverage_ratio":  0.25220794830421572,
+    "centroid_x_m":  6369047.2482795846,
+    "centroid_y_m":  2918345.5294352919,
+    "neighbors_4":  [
+                        "r584_c1273",
+                        "r583_c1274"
+                    ],
+    "neighbors_8":  [
+                        "r583_c1274",
+                        "r584_c1273",
+                        "r584_c1274"
+                    ]
+}
+
+========== GEOJSON SUMMARY: sindh_study_window_grid_5km.geojson ==========
+Path: C:\Users\epc2\Desktop\event\earth detective\web\public\data\grids\sindh_study_window_grid_5km.geojson
+Feature count: 12412
+CRS: {"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}}
+Geometry: Polygon
+Properties: cell_id, row, col, cell_size_m, full_area_km2, clipped_area_km2, coverage_ratio, centroid_x_m, centroid_y_m, neighbors_4, neighbors_8
+First feature:
+{
+    "cell_id":  "r583_c1273",
+    "row":  583,
+    "col":  1273,
+    "cell_size_m":  5000,
+    "full_area_km2":  25.0,
+    "clipped_area_km2":  6.3051987076053928,
+    "coverage_ratio":  0.25220794830421572,
+    "centroid_x_m":  6369047.2482795846,
+    "centroid_y_m":  2918345.5294352919,
+    "neighbors_4":  [
+                        "r584_c1273",
+                        "r583_c1274"
+                    ],
+    "neighbors_8":  [
+                        "r583_c1274",
+                        "r584_c1273",
+                        "r584_c1274"
+                    ]
+}
+
+========== CSV SAMPLE: C:\Users\epc2\Desktop\event\earth detective\data\raw\pakistan\imerg_august_2022.csv ==========
+Title:,"Time Series, Area-Averaged of Daily mean precipitation rate (combined microwave-IR) estimate - Final Run (daily)"
+User Start Date:,2022-08-01T00:00:00Z
+User End Date:,2022-08-31T23:59:59Z
+User Bounding Box:,"66,23.5,71.5,28.5"
+Data Bounding Box:,"66.05,23.55,71.45,28.45"
+URL to Reproduce Results:,"https://giovanni.gsfc.nasa.gov/giovanni/?utm_source=chatgpt.com#service=ArAvTs&starttime=2022-08-01T00:00:00Z&endtime=2022-08-31T23:59:59Z&bbox=66,23.5,71.5,28.5&data=GPM_3IMERGDF_07_precipitation&dataKeyword=IMERG&portal=GIOVANNI&format=json"
+Fill Value (mean_GPM_3IMERGDF_07_precipitation):, -9999.9
+
+time, mean_GPM_3IMERGDF_07_precipitation
+2022-08-01,0.520412564
+2022-08-02,0.932445288
+2022-08-03,0.808183849
+
