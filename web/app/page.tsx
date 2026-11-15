@@ -1,2 +1,2 @@
-import { OverviewPage } from "@/components/earth/pages";
-export default function Page(){return <OverviewPage/>;}
+import MissionControl from "@/components/earth/mission-control";
+export default function Page() { return <MissionControl />; }
