@@ -1,0 +1,20 @@
+{
+  "project": "Earth Detective",
+  "region": "sindh_study_window",
+  "grid_version": "1.0",
+  "grid_type": "fixed",
+  "cell_size_m": 5000,
+  "grid_crs": "EPSG:6933",
+  "output_crs": "EPSG:4326",
+  "grid_origin_m": [
+    0,
+    0
+  ],
+  "cell_count": 12412,
+  "neighbor_types": [
+    "4-directional edge neighbors",
+    "8-directional including corners"
+  ],
+  "data_values_included": false,
+  "note": "Grid geometry only. No rainfall, elevation, or vulnerability values have been assigned."
+}
