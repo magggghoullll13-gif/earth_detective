@@ -1,0 +1,2419 @@
+{
+  "summary": {
+    "total_cells": 12412,
+    "downloaded_tile_count": 39,
+    "missing_study_window_tiles": [
+      "n23e066"
+    ],
+    "cells_below_95_pct": 240,
+    "low_cells_with_tile_footprint_below_95_pct": 240,
+    "low_cells_with_tile_footprint_at_least_99_pct": 0,
+    "zero_coverage_cells": 228,
+    "cells_without_land_elevation": 1102,
+    "water_only_cells_without_land_elevation": 874,
+    "cells_with_land_but_no_elevation": 0
+  },
+  "low_coverage_cells": [
+    {
+      "cell_id": "r583_c1273",
+      "longitude": 66.00987,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1274",
+      "longitude": 66.04566,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1275",
+      "longitude": 66.09748,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1276",
+      "longitude": 66.1493,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1277",
+      "longitude": 66.20112,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1278",
+      "longitude": 66.25294,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1279",
+      "longitude": 66.30476,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1280",
+      "longitude": 66.35658,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1281",
+      "longitude": 66.40841,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1282",
+      "longitude": 66.46023,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1283",
+      "longitude": 66.51205,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1284",
+      "longitude": 66.56387,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1285",
+      "longitude": 66.61569,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1286",
+      "longitude": 66.66751,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1287",
+      "longitude": 66.71933,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1288",
+      "longitude": 66.77115,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1289",
+      "longitude": 66.82297,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1290",
+      "longitude": 66.87479,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1291",
+      "longitude": 66.92661,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1273",
+      "longitude": 66.00987,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1274",
+      "longitude": 66.04566,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1275",
+      "longitude": 66.09748,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1276",
+      "longitude": 66.1493,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1277",
+      "longitude": 66.20112,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1278",
+      "longitude": 66.25294,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1279",
+      "longitude": 66.30476,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1280",
+      "longitude": 66.35658,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1281",
+      "longitude": 66.40841,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1282",
+      "longitude": 66.46023,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1283",
+      "longitude": 66.51205,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1284",
+      "longitude": 66.56387,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1285",
+      "longitude": 66.61569,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1286",
+      "longitude": 66.66751,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1287",
+      "longitude": 66.71933,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1288",
+      "longitude": 66.77115,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1289",
+      "longitude": 66.82297,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1290",
+      "longitude": 66.87479,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1291",
+      "longitude": 66.92661,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1273",
+      "longitude": 66.00987,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1274",
+      "longitude": 66.04566,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1275",
+      "longitude": 66.09748,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1276",
+      "longitude": 66.1493,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1277",
+      "longitude": 66.20112,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1278",
+      "longitude": 66.25294,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1279",
+      "longitude": 66.30476,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1280",
+      "longitude": 66.35658,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1281",
+      "longitude": 66.40841,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1282",
+      "longitude": 66.46023,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1283",
+      "longitude": 66.51205,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1284",
+      "longitude": 66.56387,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1285",
+      "longitude": 66.61569,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1286",
+      "longitude": 66.66751,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1287",
+      "longitude": 66.71933,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1288",
+      "longitude": 66.77115,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1289",
+      "longitude": 66.82297,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1290",
+      "longitude": 66.87479,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1291",
+      "longitude": 66.92661,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1273",
+      "longitude": 66.00987,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1274",
+      "longitude": 66.04566,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1275",
+      "longitude": 66.09748,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1276",
+      "longitude": 66.1493,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1277",
+      "longitude": 66.20112,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1278",
+      "longitude": 66.25294,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1279",
+      "longitude": 66.30476,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1280",
+      "longitude": 66.35658,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1281",
+      "longitude": 66.40841,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1282",
+      "longitude": 66.46023,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1283",
+      "longitude": 66.51205,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1284",
+      "longitude": 66.56387,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1285",
+      "longitude": 66.61569,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1286",
+      "longitude": 66.66751,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1287",
+      "longitude": 66.71933,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1288",
+      "longitude": 66.77115,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1289",
+      "longitude": 66.82297,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1290",
+      "longitude": 66.87479,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1291",
+      "longitude": 66.92661,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1273",
+      "longitude": 66.00987,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1274",
+      "longitude": 66.04566,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1275",
+      "longitude": 66.09748,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1276",
+      "longitude": 66.1493,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1277",
+      "longitude": 66.20112,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1278",
+      "longitude": 66.25294,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1279",
+      "longitude": 66.30476,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1280",
+      "longitude": 66.35658,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1281",
+      "longitude": 66.40841,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1282",
+      "longitude": 66.46023,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1283",
+      "longitude": 66.51205,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1284",
+      "longitude": 66.56387,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1285",
+      "longitude": 66.61569,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1286",
+      "longitude": 66.66751,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1287",
+      "longitude": 66.71933,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1288",
+      "longitude": 66.77115,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1289",
+      "longitude": 66.82297,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1290",
+      "longitude": 66.87479,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1291",
+      "longitude": 66.92661,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1273",
+      "longitude": 66.00987,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1274",
+      "longitude": 66.04566,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1275",
+      "longitude": 66.09748,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1276",
+      "longitude": 66.1493,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1277",
+      "longitude": 66.20112,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1278",
+      "longitude": 66.25294,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1279",
+      "longitude": 66.30476,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1280",
+      "longitude": 66.35658,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1281",
+      "longitude": 66.40841,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1282",
+      "longitude": 66.46023,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1283",
+      "longitude": 66.51205,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1284",
+      "longitude": 66.56387,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1285",
+      "longitude": 66.61569,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1286",
+      "longitude": 66.66751,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1287",
+      "longitude": 66.71933,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1288",
+      "longitude": 66.77115,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1289",
+      "longitude": 66.82297,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1290",
+      "longitude": 66.87479,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1291",
+      "longitude": 66.92661,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1273",
+      "longitude": 66.00987,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1274",
+      "longitude": 66.04566,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1275",
+      "longitude": 66.09748,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1276",
+      "longitude": 66.1493,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1277",
+      "longitude": 66.20112,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1278",
+      "longitude": 66.25294,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1279",
+      "longitude": 66.30476,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1280",
+      "longitude": 66.35658,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1281",
+      "longitude": 66.40841,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1282",
+      "longitude": 66.46023,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1283",
+      "longitude": 66.51205,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1284",
+      "longitude": 66.56387,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1285",
+      "longitude": 66.61569,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1286",
+      "longitude": 66.66751,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1287",
+      "longitude": 66.71933,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1288",
+      "longitude": 66.77115,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1289",
+      "longitude": 66.82297,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1290",
+      "longitude": 66.87479,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1291",
+      "longitude": 66.92661,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1273",
+      "longitude": 66.00987,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1274",
+      "longitude": 66.04566,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1275",
+      "longitude": 66.09748,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1276",
+      "longitude": 66.1493,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1277",
+      "longitude": 66.20112,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1278",
+      "longitude": 66.25294,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1279",
+      "longitude": 66.30476,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1280",
+      "longitude": 66.35658,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1281",
+      "longitude": 66.40841,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1282",
+      "longitude": 66.46023,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1283",
+      "longitude": 66.51205,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1284",
+      "longitude": 66.56387,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1285",
+      "longitude": 66.61569,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1286",
+      "longitude": 66.66751,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1287",
+      "longitude": 66.71933,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1288",
+      "longitude": 66.77115,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1289",
+      "longitude": 66.82297,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1290",
+      "longitude": 66.87479,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1291",
+      "longitude": 66.92661,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1273",
+      "longitude": 66.00987,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1274",
+      "longitude": 66.04566,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1275",
+      "longitude": 66.09748,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1276",
+      "longitude": 66.1493,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1277",
+      "longitude": 66.20112,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1278",
+      "longitude": 66.25294,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1279",
+      "longitude": 66.30476,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1280",
+      "longitude": 66.35658,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1281",
+      "longitude": 66.40841,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1282",
+      "longitude": 66.46023,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1283",
+      "longitude": 66.51205,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1284",
+      "longitude": 66.56387,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1285",
+      "longitude": 66.61569,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1286",
+      "longitude": 66.66751,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1287",
+      "longitude": 66.71933,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1288",
+      "longitude": 66.77115,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1289",
+      "longitude": 66.82297,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1290",
+      "longitude": 66.87479,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1291",
+      "longitude": 66.92661,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1273",
+      "longitude": 66.00987,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1274",
+      "longitude": 66.04566,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1275",
+      "longitude": 66.09748,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1276",
+      "longitude": 66.1493,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1277",
+      "longitude": 66.20112,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1278",
+      "longitude": 66.25294,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1279",
+      "longitude": 66.30476,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1280",
+      "longitude": 66.35658,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1281",
+      "longitude": 66.40841,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1282",
+      "longitude": 66.46023,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1283",
+      "longitude": 66.51205,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1284",
+      "longitude": 66.56387,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1285",
+      "longitude": 66.61569,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1286",
+      "longitude": 66.66751,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1287",
+      "longitude": 66.71933,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1288",
+      "longitude": 66.77115,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1289",
+      "longitude": 66.82297,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1290",
+      "longitude": 66.87479,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1291",
+      "longitude": 66.92661,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1273",
+      "longitude": 66.00987,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1274",
+      "longitude": 66.04566,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1275",
+      "longitude": 66.09748,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1276",
+      "longitude": 66.1493,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1277",
+      "longitude": 66.20112,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1278",
+      "longitude": 66.25294,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1279",
+      "longitude": 66.30476,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1280",
+      "longitude": 66.35658,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1281",
+      "longitude": 66.40841,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1282",
+      "longitude": 66.46023,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1283",
+      "longitude": 66.51205,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1284",
+      "longitude": 66.56387,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1285",
+      "longitude": 66.61569,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1286",
+      "longitude": 66.66751,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1287",
+      "longitude": 66.71933,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1288",
+      "longitude": 66.77115,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1289",
+      "longitude": 66.82297,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1290",
+      "longitude": 66.87479,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1291",
+      "longitude": 66.92661,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1273",
+      "longitude": 66.00987,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1274",
+      "longitude": 66.04566,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1275",
+      "longitude": 66.09748,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1276",
+      "longitude": 66.1493,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1277",
+      "longitude": 66.20112,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1278",
+      "longitude": 66.25294,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1279",
+      "longitude": 66.30476,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1280",
+      "longitude": 66.35658,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1281",
+      "longitude": 66.40841,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1282",
+      "longitude": 66.46023,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1283",
+      "longitude": 66.51205,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1284",
+      "longitude": 66.56387,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1285",
+      "longitude": 66.61569,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1286",
+      "longitude": 66.66751,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1287",
+      "longitude": 66.71933,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1288",
+      "longitude": 66.77115,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1289",
+      "longitude": 66.82297,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1290",
+      "longitude": 66.87479,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1291",
+      "longitude": 66.92661,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 0.0,
+      "tile_footprint_coverage_pct": 0.0,
+      "land_pct": null,
+      "water_pct": null,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r589_c1292",
+      "longitude": 66.97843,
+      "latitude": 23.76304,
+      "reported_coverage_pct": 8.53,
+      "tile_footprint_coverage_pct": 8.384,
+      "land_pct": 0.0,
+      "water_pct": 100.0,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r585_c1292",
+      "longitude": 66.97843,
+      "latitude": 23.59223,
+      "reported_coverage_pct": 8.54,
+      "tile_footprint_coverage_pct": 8.384,
+      "land_pct": 0.0,
+      "water_pct": 100.0,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r593_c1292",
+      "longitude": 66.97843,
+      "latitude": 23.93407,
+      "reported_coverage_pct": 8.57,
+      "tile_footprint_coverage_pct": 8.384,
+      "land_pct": 0.0,
+      "water_pct": 100.0,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r594_c1292",
+      "longitude": 66.97843,
+      "latitude": 23.97687,
+      "reported_coverage_pct": 8.57,
+      "tile_footprint_coverage_pct": 8.384,
+      "land_pct": 0.0,
+      "water_pct": 100.0,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r590_c1292",
+      "longitude": 66.97843,
+      "latitude": 23.80578,
+      "reported_coverage_pct": 8.58,
+      "tile_footprint_coverage_pct": 8.384,
+      "land_pct": 0.0,
+      "water_pct": 100.0,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r591_c1292",
+      "longitude": 66.97843,
+      "latitude": 23.84853,
+      "reported_coverage_pct": 8.58,
+      "tile_footprint_coverage_pct": 8.384,
+      "land_pct": 0.0,
+      "water_pct": 100.0,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r592_c1292",
+      "longitude": 66.97843,
+      "latitude": 23.89129,
+      "reported_coverage_pct": 8.58,
+      "tile_footprint_coverage_pct": 8.384,
+      "land_pct": 0.0,
+      "water_pct": 100.0,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r586_c1292",
+      "longitude": 66.97843,
+      "latitude": 23.63491,
+      "reported_coverage_pct": 8.59,
+      "tile_footprint_coverage_pct": 8.384,
+      "land_pct": 0.0,
+      "water_pct": 100.0,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r587_c1292",
+      "longitude": 66.97843,
+      "latitude": 23.67761,
+      "reported_coverage_pct": 8.59,
+      "tile_footprint_coverage_pct": 8.384,
+      "land_pct": 0.0,
+      "water_pct": 100.0,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r588_c1292",
+      "longitude": 66.97843,
+      "latitude": 23.72032,
+      "reported_coverage_pct": 8.59,
+      "tile_footprint_coverage_pct": 8.384,
+      "land_pct": 0.0,
+      "water_pct": 100.0,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r584_c1292",
+      "longitude": 66.97843,
+      "latitude": 23.54956,
+      "reported_coverage_pct": 8.6,
+      "tile_footprint_coverage_pct": 8.384,
+      "land_pct": 0.0,
+      "water_pct": 100.0,
+      "mean_elevation_m": null
+    },
+    {
+      "cell_id": "r583_c1292",
+      "longitude": 66.97843,
+      "latitude": 23.51411,
+      "reported_coverage_pct": 8.61,
+      "tile_footprint_coverage_pct": 8.384,
+      "land_pct": 0.0,
+      "water_pct": 100.0,
+      "mean_elevation_m": null
+    }
+  ],
+  "unexpected_low_coverage_cells": []
+}
