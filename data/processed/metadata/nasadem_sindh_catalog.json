@@ -1,0 +1,416 @@
+{
+  "region": "Sindh study window, Pakistan",
+  "bbox": [
+    66.0,
+    23.5,
+    71.5,
+    28.5
+  ],
+  "version": "001",
+  "products": {
+    "NASADEM_HGT": {
+      "granule_count": 39,
+      "tile_ids": [
+        "n23e067",
+        "n23e068",
+        "n23e069",
+        "n23e070",
+        "n23e071",
+        "n24e066",
+        "n24e067",
+        "n24e068",
+        "n24e069",
+        "n24e070",
+        "n24e071",
+        "n25e065",
+        "n25e066",
+        "n25e067",
+        "n25e068",
+        "n25e069",
+        "n25e070",
+        "n25e071",
+        "n26e065",
+        "n26e066",
+        "n26e067",
+        "n26e068",
+        "n26e069",
+        "n26e070",
+        "n26e071",
+        "n27e065",
+        "n27e066",
+        "n27e067",
+        "n27e068",
+        "n27e069",
+        "n27e070",
+        "n27e071",
+        "n28e065",
+        "n28e066",
+        "n28e067",
+        "n28e068",
+        "n28e069",
+        "n28e070",
+        "n28e071"
+      ],
+      "granules": [
+        {
+          "name": "NASADEM_HGT_n23e067",
+          "tile_id": "n23e067"
+        },
+        {
+          "name": "NASADEM_HGT_n23e068",
+          "tile_id": "n23e068"
+        },
+        {
+          "name": "NASADEM_HGT_n23e069",
+          "tile_id": "n23e069"
+        },
+        {
+          "name": "NASADEM_HGT_n23e070",
+          "tile_id": "n23e070"
+        },
+        {
+          "name": "NASADEM_HGT_n23e071",
+          "tile_id": "n23e071"
+        },
+        {
+          "name": "NASADEM_HGT_n24e066",
+          "tile_id": "n24e066"
+        },
+        {
+          "name": "NASADEM_HGT_n24e067",
+          "tile_id": "n24e067"
+        },
+        {
+          "name": "NASADEM_HGT_n24e068",
+          "tile_id": "n24e068"
+        },
+        {
+          "name": "NASADEM_HGT_n24e069",
+          "tile_id": "n24e069"
+        },
+        {
+          "name": "NASADEM_HGT_n24e070",
+          "tile_id": "n24e070"
+        },
+        {
+          "name": "NASADEM_HGT_n24e071",
+          "tile_id": "n24e071"
+        },
+        {
+          "name": "NASADEM_HGT_n25e065",
+          "tile_id": "n25e065"
+        },
+        {
+          "name": "NASADEM_HGT_n25e066",
+          "tile_id": "n25e066"
+        },
+        {
+          "name": "NASADEM_HGT_n25e067",
+          "tile_id": "n25e067"
+        },
+        {
+          "name": "NASADEM_HGT_n25e068",
+          "tile_id": "n25e068"
+        },
+        {
+          "name": "NASADEM_HGT_n25e069",
+          "tile_id": "n25e069"
+        },
+        {
+          "name": "NASADEM_HGT_n25e070",
+          "tile_id": "n25e070"
+        },
+        {
+          "name": "NASADEM_HGT_n25e071",
+          "tile_id": "n25e071"
+        },
+        {
+          "name": "NASADEM_HGT_n26e065",
+          "tile_id": "n26e065"
+        },
+        {
+          "name": "NASADEM_HGT_n26e066",
+          "tile_id": "n26e066"
+        },
+        {
+          "name": "NASADEM_HGT_n26e067",
+          "tile_id": "n26e067"
+        },
+        {
+          "name": "NASADEM_HGT_n26e068",
+          "tile_id": "n26e068"
+        },
+        {
+          "name": "NASADEM_HGT_n26e069",
+          "tile_id": "n26e069"
+        },
+        {
+          "name": "NASADEM_HGT_n26e070",
+          "tile_id": "n26e070"
+        },
+        {
+          "name": "NASADEM_HGT_n26e071",
+          "tile_id": "n26e071"
+        },
+        {
+          "name": "NASADEM_HGT_n27e065",
+          "tile_id": "n27e065"
+        },
+        {
+          "name": "NASADEM_HGT_n27e066",
+          "tile_id": "n27e066"
+        },
+        {
+          "name": "NASADEM_HGT_n27e067",
+          "tile_id": "n27e067"
+        },
+        {
+          "name": "NASADEM_HGT_n27e068",
+          "tile_id": "n27e068"
+        },
+        {
+          "name": "NASADEM_HGT_n27e069",
+          "tile_id": "n27e069"
+        },
+        {
+          "name": "NASADEM_HGT_n27e070",
+          "tile_id": "n27e070"
+        },
+        {
+          "name": "NASADEM_HGT_n27e071",
+          "tile_id": "n27e071"
+        },
+        {
+          "name": "NASADEM_HGT_n28e065",
+          "tile_id": "n28e065"
+        },
+        {
+          "name": "NASADEM_HGT_n28e066",
+          "tile_id": "n28e066"
+        },
+        {
+          "name": "NASADEM_HGT_n28e067",
+          "tile_id": "n28e067"
+        },
+        {
+          "name": "NASADEM_HGT_n28e068",
+          "tile_id": "n28e068"
+        },
+        {
+          "name": "NASADEM_HGT_n28e069",
+          "tile_id": "n28e069"
+        },
+        {
+          "name": "NASADEM_HGT_n28e070",
+          "tile_id": "n28e070"
+        },
+        {
+          "name": "NASADEM_HGT_n28e071",
+          "tile_id": "n28e071"
+        }
+      ]
+    },
+    "NASADEM_SC": {
+      "granule_count": 39,
+      "tile_ids": [
+        "n23e067",
+        "n23e068",
+        "n23e069",
+        "n23e070",
+        "n23e071",
+        "n24e066",
+        "n24e067",
+        "n24e068",
+        "n24e069",
+        "n24e070",
+        "n24e071",
+        "n25e065",
+        "n25e066",
+        "n25e067",
+        "n25e068",
+        "n25e069",
+        "n25e070",
+        "n25e071",
+        "n26e065",
+        "n26e066",
+        "n26e067",
+        "n26e068",
+        "n26e069",
+        "n26e070",
+        "n26e071",
+        "n27e065",
+        "n27e066",
+        "n27e067",
+        "n27e068",
+        "n27e069",
+        "n27e070",
+        "n27e071",
+        "n28e065",
+        "n28e066",
+        "n28e067",
+        "n28e068",
+        "n28e069",
+        "n28e070",
+        "n28e071"
+      ],
+      "granules": [
+        {
+          "name": "NASADEM_SC_n23e067",
+          "tile_id": "n23e067"
+        },
+        {
+          "name": "NASADEM_SC_n23e068",
+          "tile_id": "n23e068"
+        },
+        {
+          "name": "NASADEM_SC_n23e069",
+          "tile_id": "n23e069"
+        },
+        {
+          "name": "NASADEM_SC_n23e070",
+          "tile_id": "n23e070"
+        },
+        {
+          "name": "NASADEM_SC_n23e071",
+          "tile_id": "n23e071"
+        },
+        {
+          "name": "NASADEM_SC_n24e066",
+          "tile_id": "n24e066"
+        },
+        {
+          "name": "NASADEM_SC_n24e067",
+          "tile_id": "n24e067"
+        },
+        {
+          "name": "NASADEM_SC_n24e068",
+          "tile_id": "n24e068"
+        },
+        {
+          "name": "NASADEM_SC_n24e069",
+          "tile_id": "n24e069"
+        },
+        {
+          "name": "NASADEM_SC_n24e070",
+          "tile_id": "n24e070"
+        },
+        {
+          "name": "NASADEM_SC_n24e071",
+          "tile_id": "n24e071"
+        },
+        {
+          "name": "NASADEM_SC_n25e065",
+          "tile_id": "n25e065"
+        },
+        {
+          "name": "NASADEM_SC_n25e066",
+          "tile_id": "n25e066"
+        },
+        {
+          "name": "NASADEM_SC_n25e067",
+          "tile_id": "n25e067"
+        },
+        {
+          "name": "NASADEM_SC_n25e068",
+          "tile_id": "n25e068"
+        },
+        {
+          "name": "NASADEM_SC_n25e069",
+          "tile_id": "n25e069"
+        },
+        {
+          "name": "NASADEM_SC_n25e070",
+          "tile_id": "n25e070"
+        },
+        {
+          "name": "NASADEM_SC_n25e071",
+          "tile_id": "n25e071"
+        },
+        {
+          "name": "NASADEM_SC_n26e065",
+          "tile_id": "n26e065"
+        },
+        {
+          "name": "NASADEM_SC_n26e066",
+          "tile_id": "n26e066"
+        },
+        {
+          "name": "NASADEM_SC_n26e067",
+          "tile_id": "n26e067"
+        },
+        {
+          "name": "NASADEM_SC_n26e068",
+          "tile_id": "n26e068"
+        },
+        {
+          "name": "NASADEM_SC_n26e069",
+          "tile_id": "n26e069"
+        },
+        {
+          "name": "NASADEM_SC_n26e070",
+          "tile_id": "n26e070"
+        },
+        {
+          "name": "NASADEM_SC_n26e071",
+          "tile_id": "n26e071"
+        },
+        {
+          "name": "NASADEM_SC_n27e065",
+          "tile_id": "n27e065"
+        },
+        {
+          "name": "NASADEM_SC_n27e066",
+          "tile_id": "n27e066"
+        },
+        {
+          "name": "NASADEM_SC_n27e067",
+          "tile_id": "n27e067"
+        },
+        {
+          "name": "NASADEM_SC_n27e068",
+          "tile_id": "n27e068"
+        },
+        {
+          "name": "NASADEM_SC_n27e069",
+          "tile_id": "n27e069"
+        },
+        {
+          "name": "NASADEM_SC_n27e070",
+          "tile_id": "n27e070"
+        },
+        {
+          "name": "NASADEM_SC_n27e071",
+          "tile_id": "n27e071"
+        },
+        {
+          "name": "NASADEM_SC_n28e065",
+          "tile_id": "n28e065"
+        },
+        {
+          "name": "NASADEM_SC_n28e066",
+          "tile_id": "n28e066"
+        },
+        {
+          "name": "NASADEM_SC_n28e067",
+          "tile_id": "n28e067"
+        },
+        {
+          "name": "NASADEM_SC_n28e068",
+          "tile_id": "n28e068"
+        },
+        {
+          "name": "NASADEM_SC_n28e069",
+          "tile_id": "n28e069"
+        },
+        {
+          "name": "NASADEM_SC_n28e070",
+          "tile_id": "n28e070"
+        },
+        {
+          "name": "NASADEM_SC_n28e071",
+          "tile_id": "n28e071"
+        }
+      ]
+    }
+  }
+}

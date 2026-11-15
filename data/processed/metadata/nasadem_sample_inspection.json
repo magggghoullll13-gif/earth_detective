@@ -1,0 +1,57 @@
+{
+  "tile": "n24e067",
+  "products": {
+    "NASADEM_HGT": {
+      "archive": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\sample\\NASADEM_HGT_n24e067.zip",
+      "archive_size_bytes": 4529251,
+      "members": [
+        {
+          "name": "n24e067.hgt",
+          "size_mb": 24.733,
+          "compressed_mb": 4.017
+        },
+        {
+          "name": "n24e067.num",
+          "size_mb": 12.366,
+          "compressed_mb": 0.197
+        },
+        {
+          "name": "n24e067.swb",
+          "size_mb": 12.366,
+          "compressed_mb": 0.105
+        }
+      ]
+    },
+    "NASADEM_SC": {
+      "archive": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\sample\\NASADEM_SC_n24e067.zip",
+      "archive_size_bytes": 102440775,
+      "members": [
+        {
+          "name": "n24e067.slope",
+          "size_mb": 24.733,
+          "compressed_mb": 12.623
+        },
+        {
+          "name": "n24e067.aspect",
+          "size_mb": 24.733,
+          "compressed_mb": 17.814
+        },
+        {
+          "name": "n24e067.planc",
+          "size_mb": 49.466,
+          "compressed_mb": 33.669
+        },
+        {
+          "name": "n24e067.profc",
+          "size_mb": 49.466,
+          "compressed_mb": 33.484
+        },
+        {
+          "name": "n24e067.swb",
+          "size_mb": 12.366,
+          "compressed_mb": 0.105
+        }
+      ]
+    }
+  }
+}
