@@ -1,0 +1,91 @@
+{
+  "dataset": "HydroRIVERS v1.0",
+  "publisher": "HydroSHEDS",
+  "source_crs": "EPSG:4326",
+  "study_bbox": [
+    66.0,
+    23.5,
+    71.5,
+    28.5
+  ],
+  "buffered_bbox": [
+    65.0,
+    22.5,
+    72.5,
+    29.5
+  ],
+  "source_feature_count": 1428959,
+  "regional_feature_count": 19137,
+  "unique_river_ids": 19137,
+  "segments_in_study_window": 12290,
+  "columns": [
+    "HYRIV_ID",
+    "NEXT_DOWN",
+    "MAIN_RIV",
+    "LENGTH_KM",
+    "DIST_DN_KM",
+    "DIST_UP_KM",
+    "CATCH_SKM",
+    "UPLAND_SKM",
+    "ENDORHEIC",
+    "DIS_AV_CMS",
+    "ORD_STRA",
+    "ORD_CLAS",
+    "ORD_FLOW",
+    "HYBAS_L12",
+    "geometry"
+  ],
+  "invalid_geometries": 0,
+  "empty_geometries": 0,
+  "sample_records": [
+    {
+      "HYRIV_ID": 40706351,
+      "LENGTH_KM": 2.75,
+      "ORD_STRA": 1,
+      "ORD_CLAS": 4,
+      "DIS_AV_CMS": 0.026,
+      "NEXT_DOWN": 40706352
+    },
+    {
+      "HYRIV_ID": 40706357,
+      "LENGTH_KM": 5.09,
+      "ORD_STRA": 1,
+      "ORD_CLAS": 5,
+      "DIS_AV_CMS": 0.021,
+      "NEXT_DOWN": 40705593
+    },
+    {
+      "HYRIV_ID": 40706534,
+      "LENGTH_KM": 0.92,
+      "ORD_STRA": 1,
+      "ORD_CLAS": 3,
+      "DIS_AV_CMS": 0.021,
+      "NEXT_DOWN": 40706352
+    },
+    {
+      "HYRIV_ID": 40706535,
+      "LENGTH_KM": 7.51,
+      "ORD_STRA": 5,
+      "ORD_CLAS": 2,
+      "DIS_AV_CMS": 5.427,
+      "NEXT_DOWN": 40706137
+    },
+    {
+      "HYRIV_ID": 40706536,
+      "LENGTH_KM": 0.61,
+      "ORD_STRA": 3,
+      "ORD_CLAS": 3,
+      "DIS_AV_CMS": 1.126,
+      "NEXT_DOWN": 40706359
+    }
+  ],
+  "local_subset": "data\\processed\\hydrology\\hydrorivers_sindh_buffered.gpkg",
+  "status": "regional_subset_created",
+  "notes": [
+    "Study area is a rectangle, not a province boundary.",
+    "Buffer includes rivers outside the study area.",
+    "LENGTH_KM describes the original source segment.",
+    "No river proximity or flood score calculated yet.",
+    "Dataset is HydroSHEDS, not directly NASA."
+  ]
+}

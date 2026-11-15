@@ -1,0 +1,42 @@
+{
+  "dataset": "HydroRIVERS version 1",
+  "region": "Asia",
+  "source_url": "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_as_shp.zip",
+  "archive_path": "data\\raw\\hydrology\\hydrorivers\\HydroRIVERS_v10_as_shp.zip",
+  "archive_size_bytes": 90510995,
+  "shapefiles": [
+    "HydroRIVERS_v10_as_shp/HydroRIVERS_v10_as.shp"
+  ],
+  "members": [
+    {
+      "name": "HydroRIVERS_TechDoc_v10.pdf",
+      "bytes": 534461
+    },
+    {
+      "name": "HydroRIVERS_v10_as_shp/HydroRIVERS_v10_as.dbf",
+      "bytes": 147183259
+    },
+    {
+      "name": "HydroRIVERS_v10_as_shp/HydroRIVERS_v10_as.prj",
+      "bytes": 145
+    },
+    {
+      "name": "HydroRIVERS_v10_as_shp/HydroRIVERS_v10_as.sbn",
+      "bytes": 12055780
+    },
+    {
+      "name": "HydroRIVERS_v10_as_shp/HydroRIVERS_v10_as.sbx",
+      "bytes": 182788
+    },
+    {
+      "name": "HydroRIVERS_v10_as_shp/HydroRIVERS_v10_as.shp",
+      "bytes": 207445068
+    },
+    {
+      "name": "HydroRIVERS_v10_as_shp/HydroRIVERS_v10_as.shx",
+      "bytes": 11431772
+    }
+  ],
+  "status": "archive_validated",
+  "note": "Non-NASA hydrography; inspect license before redistribution."
+}
