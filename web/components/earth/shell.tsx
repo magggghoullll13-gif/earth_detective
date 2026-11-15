@@ -109,4 +109,7 @@ function Shell({children}:{children:React.ReactNode}) {
     </div>
   </div>;
 }
-export default function SiteShell({children}:{children:React.ReactNode}) {return <EarthDataProvider><Shell>{children}</Shell></EarthDataProvider>;}
+export default function SiteShell({children}:{children:React.ReactNode}) {
+  const pathname = usePathname();
+  return <EarthDataProvider>{pathname === "/" ? children : <Shell>{children}</Shell>}</EarthDataProvider>;
+}
