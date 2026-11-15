@@ -1,5 +1,2 @@
-import GridExplorer from "@/components/grid/GridExplorer";
-
-export default function GridPage() {
-  return <GridExplorer />;
-}
+import { ExplorerPage } from "@/components/earth/pages";
+export default function Page(){return <ExplorerPage/>;}
