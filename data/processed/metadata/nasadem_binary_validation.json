@@ -1,0 +1,26 @@
+{
+  "tile": "n24e067",
+  "raster_shape": [
+    3601,
+    3601
+  ],
+  "elevation": {
+    "units": "m above EGM96",
+    "min": -43,
+    "max": 312,
+    "mean": 18.397287940541837
+  },
+  "slope": {
+    "units": "degrees",
+    "min": 0.0,
+    "max": 48.97999954223633,
+    "mean": 1.8039593696594238,
+    "p95": 4.369999885559082
+  },
+  "quality": {
+    "land_count": 9384750,
+    "water_count": 3582451,
+    "mask_differences": 0,
+    "land_slope_over_90": 0
+  }
+}

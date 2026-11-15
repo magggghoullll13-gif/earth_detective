@@ -1,0 +1,563 @@
+{
+  "region": "Sindh study window, Pakistan",
+  "bbox": [
+    66.0,
+    23.5,
+    71.5,
+    28.5
+  ],
+  "tile_count": 39,
+  "products": {
+    "NASADEM_HGT": [
+      {
+        "tile_id": "n23e067",
+        "granule": "NASADEM_HGT_n23e067",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n23e067.zip",
+        "size_bytes": 458998
+      },
+      {
+        "tile_id": "n23e068",
+        "granule": "NASADEM_HGT_n23e068",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n23e068.zip",
+        "size_bytes": 3860282
+      },
+      {
+        "tile_id": "n23e069",
+        "granule": "NASADEM_HGT_n23e069",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n23e069.zip",
+        "size_bytes": 7089026
+      },
+      {
+        "tile_id": "n23e070",
+        "granule": "NASADEM_HGT_n23e070",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n23e070.zip",
+        "size_bytes": 6693832
+      },
+      {
+        "tile_id": "n23e071",
+        "granule": "NASADEM_HGT_n23e071",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n23e071.zip",
+        "size_bytes": 5888173
+      },
+      {
+        "tile_id": "n24e066",
+        "granule": "NASADEM_HGT_n24e066",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n24e066.zip",
+        "size_bytes": 552669
+      },
+      {
+        "tile_id": "n24e067",
+        "granule": "NASADEM_HGT_n24e067",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n24e067.zip",
+        "size_bytes": 4529251
+      },
+      {
+        "tile_id": "n24e068",
+        "granule": "NASADEM_HGT_n24e068",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n24e068.zip",
+        "size_bytes": 5166377
+      },
+      {
+        "tile_id": "n24e069",
+        "granule": "NASADEM_HGT_n24e069",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n24e069.zip",
+        "size_bytes": 6848868
+      },
+      {
+        "tile_id": "n24e070",
+        "granule": "NASADEM_HGT_n24e070",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n24e070.zip",
+        "size_bytes": 6870068
+      },
+      {
+        "tile_id": "n24e071",
+        "granule": "NASADEM_HGT_n24e071",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n24e071.zip",
+        "size_bytes": 7137877
+      },
+      {
+        "tile_id": "n25e065",
+        "granule": "NASADEM_HGT_n25e065",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n25e065.zip",
+        "size_bytes": 8240420
+      },
+      {
+        "tile_id": "n25e066",
+        "granule": "NASADEM_HGT_n25e066",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n25e066.zip",
+        "size_bytes": 7494189
+      },
+      {
+        "tile_id": "n25e067",
+        "granule": "NASADEM_HGT_n25e067",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n25e067.zip",
+        "size_bytes": 10580691
+      },
+      {
+        "tile_id": "n25e068",
+        "granule": "NASADEM_HGT_n25e068",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n25e068.zip",
+        "size_bytes": 6329719
+      },
+      {
+        "tile_id": "n25e069",
+        "granule": "NASADEM_HGT_n25e069",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n25e069.zip",
+        "size_bytes": 6414026
+      },
+      {
+        "tile_id": "n25e070",
+        "granule": "NASADEM_HGT_n25e070",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n25e070.zip",
+        "size_bytes": 8573214
+      },
+      {
+        "tile_id": "n25e071",
+        "granule": "NASADEM_HGT_n25e071",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n25e071.zip",
+        "size_bytes": 7957536
+      },
+      {
+        "tile_id": "n26e065",
+        "granule": "NASADEM_HGT_n26e065",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n26e065.zip",
+        "size_bytes": 12934787
+      },
+      {
+        "tile_id": "n26e066",
+        "granule": "NASADEM_HGT_n26e066",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n26e066.zip",
+        "size_bytes": 14260816
+      },
+      {
+        "tile_id": "n26e067",
+        "granule": "NASADEM_HGT_n26e067",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n26e067.zip",
+        "size_bytes": 10813013
+      },
+      {
+        "tile_id": "n26e068",
+        "granule": "NASADEM_HGT_n26e068",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n26e068.zip",
+        "size_bytes": 6140356
+      },
+      {
+        "tile_id": "n26e069",
+        "granule": "NASADEM_HGT_n26e069",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n26e069.zip",
+        "size_bytes": 8575475
+      },
+      {
+        "tile_id": "n26e070",
+        "granule": "NASADEM_HGT_n26e070",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n26e070.zip",
+        "size_bytes": 8527156
+      },
+      {
+        "tile_id": "n26e071",
+        "granule": "NASADEM_HGT_n26e071",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n26e071.zip",
+        "size_bytes": 6793768
+      },
+      {
+        "tile_id": "n27e065",
+        "granule": "NASADEM_HGT_n27e065",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n27e065.zip",
+        "size_bytes": 12658817
+      },
+      {
+        "tile_id": "n27e066",
+        "granule": "NASADEM_HGT_n27e066",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n27e066.zip",
+        "size_bytes": 13947802
+      },
+      {
+        "tile_id": "n27e067",
+        "granule": "NASADEM_HGT_n27e067",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n27e067.zip",
+        "size_bytes": 11470086
+      },
+      {
+        "tile_id": "n27e068",
+        "granule": "NASADEM_HGT_n27e068",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n27e068.zip",
+        "size_bytes": 5865101
+      },
+      {
+        "tile_id": "n27e069",
+        "granule": "NASADEM_HGT_n27e069",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n27e069.zip",
+        "size_bytes": 6663348
+      },
+      {
+        "tile_id": "n27e070",
+        "granule": "NASADEM_HGT_n27e070",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n27e070.zip",
+        "size_bytes": 7047465
+      },
+      {
+        "tile_id": "n27e071",
+        "granule": "NASADEM_HGT_n27e071",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n27e071.zip",
+        "size_bytes": 7239374
+      },
+      {
+        "tile_id": "n28e065",
+        "granule": "NASADEM_HGT_n28e065",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n28e065.zip",
+        "size_bytes": 12494180
+      },
+      {
+        "tile_id": "n28e066",
+        "granule": "NASADEM_HGT_n28e066",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n28e066.zip",
+        "size_bytes": 13620066
+      },
+      {
+        "tile_id": "n28e067",
+        "granule": "NASADEM_HGT_n28e067",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n28e067.zip",
+        "size_bytes": 11532012
+      },
+      {
+        "tile_id": "n28e068",
+        "granule": "NASADEM_HGT_n28e068",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n28e068.zip",
+        "size_bytes": 6551247
+      },
+      {
+        "tile_id": "n28e069",
+        "granule": "NASADEM_HGT_n28e069",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n28e069.zip",
+        "size_bytes": 7004711
+      },
+      {
+        "tile_id": "n28e070",
+        "granule": "NASADEM_HGT_n28e070",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n28e070.zip",
+        "size_bytes": 5835079
+      },
+      {
+        "tile_id": "n28e071",
+        "granule": "NASADEM_HGT_n28e071",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_HGT\\NASADEM_HGT_n28e071.zip",
+        "size_bytes": 5936401
+      }
+    ],
+    "NASADEM_SC": [
+      {
+        "tile_id": "n23e067",
+        "granule": "NASADEM_SC_n23e067",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n23e067.zip",
+        "size_bytes": 9904258
+      },
+      {
+        "tile_id": "n23e068",
+        "granule": "NASADEM_SC_n23e068",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n23e068.zip",
+        "size_bytes": 75603506
+      },
+      {
+        "tile_id": "n23e069",
+        "granule": "NASADEM_SC_n23e069",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n23e069.zip",
+        "size_bytes": 138209339
+      },
+      {
+        "tile_id": "n23e070",
+        "granule": "NASADEM_SC_n23e070",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n23e070.zip",
+        "size_bytes": 138722618
+      },
+      {
+        "tile_id": "n23e071",
+        "granule": "NASADEM_SC_n23e071",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n23e071.zip",
+        "size_bytes": 140161970
+      },
+      {
+        "tile_id": "n24e066",
+        "granule": "NASADEM_SC_n24e066",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n24e066.zip",
+        "size_bytes": 7315576
+      },
+      {
+        "tile_id": "n24e067",
+        "granule": "NASADEM_SC_n24e067",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n24e067.zip",
+        "size_bytes": 102440775
+      },
+      {
+        "tile_id": "n24e068",
+        "granule": "NASADEM_SC_n24e068",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n24e068.zip",
+        "size_bytes": 131550931
+      },
+      {
+        "tile_id": "n24e069",
+        "granule": "NASADEM_SC_n24e069",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n24e069.zip",
+        "size_bytes": 138982034
+      },
+      {
+        "tile_id": "n24e070",
+        "granule": "NASADEM_SC_n24e070",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n24e070.zip",
+        "size_bytes": 141013288
+      },
+      {
+        "tile_id": "n24e071",
+        "granule": "NASADEM_SC_n24e071",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n24e071.zip",
+        "size_bytes": 140734925
+      },
+      {
+        "tile_id": "n25e065",
+        "granule": "NASADEM_SC_n25e065",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n25e065.zip",
+        "size_bytes": 90980026
+      },
+      {
+        "tile_id": "n25e066",
+        "granule": "NASADEM_SC_n25e066",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n25e066.zip",
+        "size_bytes": 98867459
+      },
+      {
+        "tile_id": "n25e067",
+        "granule": "NASADEM_SC_n25e067",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n25e067.zip",
+        "size_bytes": 142039790
+      },
+      {
+        "tile_id": "n25e068",
+        "granule": "NASADEM_SC_n25e068",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n25e068.zip",
+        "size_bytes": 139487254
+      },
+      {
+        "tile_id": "n25e069",
+        "granule": "NASADEM_SC_n25e069",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n25e069.zip",
+        "size_bytes": 140491149
+      },
+      {
+        "tile_id": "n25e070",
+        "granule": "NASADEM_SC_n25e070",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n25e070.zip",
+        "size_bytes": 141370473
+      },
+      {
+        "tile_id": "n25e071",
+        "granule": "NASADEM_SC_n25e071",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n25e071.zip",
+        "size_bytes": 141151576
+      },
+      {
+        "tile_id": "n26e065",
+        "granule": "NASADEM_SC_n26e065",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n26e065.zip",
+        "size_bytes": 143378137
+      },
+      {
+        "tile_id": "n26e066",
+        "granule": "NASADEM_SC_n26e066",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n26e066.zip",
+        "size_bytes": 143857164
+      },
+      {
+        "tile_id": "n26e067",
+        "granule": "NASADEM_SC_n26e067",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n26e067.zip",
+        "size_bytes": 141062671
+      },
+      {
+        "tile_id": "n26e068",
+        "granule": "NASADEM_SC_n26e068",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n26e068.zip",
+        "size_bytes": 140448757
+      },
+      {
+        "tile_id": "n26e069",
+        "granule": "NASADEM_SC_n26e069",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n26e069.zip",
+        "size_bytes": 141726619
+      },
+      {
+        "tile_id": "n26e070",
+        "granule": "NASADEM_SC_n26e070",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n26e070.zip",
+        "size_bytes": 141119034
+      },
+      {
+        "tile_id": "n26e071",
+        "granule": "NASADEM_SC_n26e071",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n26e071.zip",
+        "size_bytes": 140500448
+      },
+      {
+        "tile_id": "n27e065",
+        "granule": "NASADEM_SC_n27e065",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n27e065.zip",
+        "size_bytes": 143155226
+      },
+      {
+        "tile_id": "n27e066",
+        "granule": "NASADEM_SC_n27e066",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n27e066.zip",
+        "size_bytes": 143849104
+      },
+      {
+        "tile_id": "n27e067",
+        "granule": "NASADEM_SC_n27e067",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n27e067.zip",
+        "size_bytes": 142562991
+      },
+      {
+        "tile_id": "n27e068",
+        "granule": "NASADEM_SC_n27e068",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n27e068.zip",
+        "size_bytes": 139529431
+      },
+      {
+        "tile_id": "n27e069",
+        "granule": "NASADEM_SC_n27e069",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n27e069.zip",
+        "size_bytes": 140776888
+      },
+      {
+        "tile_id": "n27e070",
+        "granule": "NASADEM_SC_n27e070",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n27e070.zip",
+        "size_bytes": 140267842
+      },
+      {
+        "tile_id": "n27e071",
+        "granule": "NASADEM_SC_n27e071",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n27e071.zip",
+        "size_bytes": 140956317
+      },
+      {
+        "tile_id": "n28e065",
+        "granule": "NASADEM_SC_n28e065",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n28e065.zip",
+        "size_bytes": 143092597
+      },
+      {
+        "tile_id": "n28e066",
+        "granule": "NASADEM_SC_n28e066",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n28e066.zip",
+        "size_bytes": 143658560
+      },
+      {
+        "tile_id": "n28e067",
+        "granule": "NASADEM_SC_n28e067",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n28e067.zip",
+        "size_bytes": 143097858
+      },
+      {
+        "tile_id": "n28e068",
+        "granule": "NASADEM_SC_n28e068",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n28e068.zip",
+        "size_bytes": 140354652
+      },
+      {
+        "tile_id": "n28e069",
+        "granule": "NASADEM_SC_n28e069",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n28e069.zip",
+        "size_bytes": 139204835
+      },
+      {
+        "tile_id": "n28e070",
+        "granule": "NASADEM_SC_n28e070",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n28e070.zip",
+        "size_bytes": 139394816
+      },
+      {
+        "tile_id": "n28e071",
+        "granule": "NASADEM_SC_n28e071",
+        "status": "complete",
+        "path": "data\\raw\\pakistan\\nasadem\\NASADEM_SC\\NASADEM_SC_n28e071.zip",
+        "size_bytes": 140442624
+      }
+    ]
+  },
+  "status": "complete"
+}
